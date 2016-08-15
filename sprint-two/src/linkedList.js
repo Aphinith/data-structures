@@ -3,21 +3,19 @@ var LinkedList = function(){
   list.head = null;
   list.tail = null;
   list.counter = 0;
-  //create a counter
-  //list.counter = 0;
-  // console.log('this is list before:', list);
 
 list.addToTail = function(value){
-
+var newNode = Node(value);
+this.tail = newNode;
 };
 
 list.removeHead = function(){
 
-  };
+};
 
-  list.contains = function(target){
+list.contains = function(target){
 
-  };
+};
 
   return list;
 };
