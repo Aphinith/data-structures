@@ -1,7 +1,7 @@
 var Tree = function(value){
   var newTree = {};
-  newTree.value = value;
   // create property named value
+  newTree.value = value;
   // use underscore to extend newTree with treeMethods
   _.extend(newTree, treeMethods);
   // your code here
@@ -21,22 +21,6 @@ treeMethods.addChild = function(value){
 };
 
 treeMethods.contains = function(target){
-  //check on newTree.children nodes contains the target 
-  //TRIED WITH _.SOME
-  // var search = function(mainRoot) {
-  //   return _.some(mainRoot, function(nodes) {
-  //       console.log('nodes:', nodes);
-  //       if (nodes.value === target) {
-  //         return true;
-  //       } else {
-  //         return _.some(mainRoot, function(nodes) {
-  //           search(nodes); 
-  //         });
-  //       }
-  //     });
-  // };
-  // search(this)
-
   var result = false;
   var search = function(mainRoot) {
     if (mainRoot.value === target) {
