@@ -8,27 +8,28 @@ list.addToTail = function(value){
   console.log('addToTail called!');
   var newNode = Node(value);
 
-  if (!list.head) {
+  if (!list.tail) {
     list.head = newNode;
     list.tail = newNode;
-  }
-  if (list.tail) {
+  } else {
+    if (!list.head.next) {
+      list.head.next = newNode;
+    }
+    list.tail.next = newNode;
     list.tail = newNode;
   }
 };
 
 list.removeHead = function(){
-  console.log('removeHead called!');
   if (list.head) {
     var removedHead = list.head;
-    list.head = list.tail;
-    console.log('after removing, list.head is now:', list.head);
+    list.head = list.head.next;
     return removedHead.value;
   }
 };
 
 list.contains = function(target){
-
+  
 };
 
   return list;
