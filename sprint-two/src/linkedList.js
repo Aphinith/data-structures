@@ -2,10 +2,8 @@ var LinkedList = function(){
   var list = {};
   list.head = null;
   list.tail = null;
-  list.counter = 0;
 
 list.addToTail = function(value){
-  console.log('addToTail called!');
   var newNode = Node(value);
 
   if (!list.tail) {
@@ -29,7 +27,17 @@ list.removeHead = function(){
 };
 
 list.contains = function(target){
-  
+  var found = false;
+  var search = function(node) {
+    if (node.value === target) {
+      found = true;
+    };
+    if (node.next) {
+      search(node.next);
+    }
+  }
+  search(list.head);
+  return found;
 };
 
   return list;
